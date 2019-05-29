@@ -71,7 +71,7 @@ sdk.base.peerCount()
 
 ### getMetaData
 
-​```javascript
+```javascript
 /**
  * @method getMetaData
  * @desc request metadata of Parabox, including `chainId`, `chainName`, `operator`, `website`, `genesisTimestamp`, `validators`, `blockInterval`, `tokenName`, `tokenSymbol`, `tokenAvatar`
@@ -116,7 +116,7 @@ sdk.base.getAbi('0xb3f940e3b5F0AA26dB9f86F0824B3581fE18E9D7', 'latest')
 
 ### getCode
 
-```javascript
+​```javascript
 /**
  * @method getCode
  * @desc request contract code from the Parabox
