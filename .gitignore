@@ -1,0 +1,15 @@
+node_modules
+*.log
+*.html
+.DS_Store
+# deploy.js
+debug
+debug.*
+src/methods/citaSignTransaction.ts
+
+*.brk
+.vscode/last.sql
+.idea
+
+# working
+subscription

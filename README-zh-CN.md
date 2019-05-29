@@ -1,61 +1,55 @@
 
 
-[中文文档](https://github.com/parabox-network/parabox-sdk-js/blob/master/README-zh-CN.md)
+# 概述
 
-# About
+`parabox-sdk` 是一个方法, 他接收 `provider` 和 `Web3 Class`(可选) 作为参数, 返回一个支持 Parabox 的 sdk 实例. 该实例下多个对象的使用方法, 如 `sdk.utils`, `sdk.eth`, `sdk.shh`, `sdk.bzz` 均与 [web3](https://web3js.readthedocs.io/en/1.0/getting-started.html) 相同.
 
-`parabox-sdk` is a function takes `provider` and `Web3 Class`(optional) as inputs, returns cita-supported web3 instance, methods of `sdk.utils`, `sdk.eth`, `sdk.shh`, `sdk.bzz` are same as [web3](https://web3js.readthedocs.io/en/1.0/getting-started.html)
+# 需注意
 
-# Notice
+Websocket 链接已支持, 但是 pub/sub 模式尚未在 Parabox 上实现.
 
-Websocket is supported, but the pub/sub is not completed in Parabox for now.
+# 版本
 
-# Version
+`parabox-sdk` 严格遵守 Semver, 并与 Parabox 的 MAJOR 和 MINOR 版本号保持一致.
 
-`parabox-sdk` strictly abides by Semver, and is compatible with Parabox by `MAJOR` and `MINOR` version, e.g. `parabox-sdk@0.23.x` will work perfectly with `Parabox@0.23`
+# 预备知识
 
-# Prerequisites
+## 学习 `web3@1.0`
 
-## Learn `web3@1.0`
+如无特别声明, `parabox-sdk` 的使用与 [`web3@1.0.0`](https://web3js.readthedocs.io/en/1.0/getting-started.html) 一致.
 
-By default, `parabox-sdk` acts like [`web3@1.0.0`](https://web3js.readthedocs.io/en/1.0/getting-started.html), and has the same APIs.
+## 学习 `Parabox`
 
-## Learn `Parabox`
-
-`parabox-sdk` works for Parabox.
+`parabox-sdk` 用于 Parabox 相关服务.
 
 
 
-# Getting Started
+# 快速开始
 
-To use `parabox-sdk`, you can add it via yarn
+可以通过 yarn 安装 `parabox-sdk`
 
 ```shell
 yarn add git remote https://github.com/parabox-network/parabox-sdk-js.git 
-```
+````
 
-
-or to link it in browser directly with
+或者直接通过 script 标签引入
 
 ```html
 <script src="node_modules/parabox-sdk/lib/bundle.js" />
 ```
 
+# 创建 `sdk.js`
 
-# Add `sdk.js`
-
-```javascript
-import ParaboxSDK from 'parabox-sdk' 
-// or 
-// const ParaboxSDK = require('parabox-sdk').default;
+​```javascript
+import ParaboxSDK from 'parabox-sdk'
 const sdk = ParaboxSDK('http://localhost:1337')
 ```
 
 # Parabox SDK
 
-`sdk.base` allows you to interact with an Parabox Blockchain and Parabox Smart Contract.
+通过 `sdk.base` 与 Parabox 链和 Parabox 智能合约交互.
 
-## RPC API Reference
+## RPC API 参考
 
 ### peerCount
 
@@ -71,7 +65,7 @@ sdk.base.peerCount()
 
 ### getMetaData
 
-​```javascript
+```javascript
 /**
  * @method getMetaData
  * @desc request metadata of Parabox, including `chainId`, `chainName`, `operator`, `website`, `genesisTimestamp`, `validators`, `blockInterval`, `tokenName`, `tokenSymbol`, `tokenAvatar`
@@ -86,8 +80,8 @@ sdk.base.peerCount()
  *     "0x486bb688c8d29056bd7f87c26733048b0a6abda1",
  *     "0x31042d4f7662cddf8ded5229db3c5e7302875e11"
  *    ],
- *    "tokenSymbol": "NOS",
- *    "tokenName": "Nervos",
+ *    "tokenSymbol": "PRB",
+ *    "tokenName": "Parabox",
  *    "tokenAvatar": "https://avatars1.githubusercontent.com/u/35361817",
  *    "operator": "test-operator",
  *    "number": "0xA2DE3",
@@ -551,7 +545,7 @@ sdk.listeners.listenToTransactionReceipt(result.hash).then(console.log)
 
 ## System Contracts API
 
-System contracts locating in `sdk.system` can be used as normal contracts.
+系统合约位于 `sdk.system`, 使用方法与一般合约相同.
 
 ```javascript
 sdk.system.admin
@@ -569,9 +563,9 @@ sdk.system.sysConfig
 sdk.system.versionManage
 ```
 
-Corresponding methods can be found [here](https://docs.citahub.com/en-US/cita/system/system-contracts#batch-transaction)
 
-## Additional Utils
+
+## 其他功能
 
 ```javascript
 /**
