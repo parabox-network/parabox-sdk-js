@@ -133,12 +133,6 @@ sdk.base.getCode('0xb3f940e3b5F0AA26dB9f86F0824B3581fE18E9D7', 'latest')
 sdk.base.getBalance('0xb3f940e3b5F0AA26dB9f86F0824B3581fE18E9D7')
 ```
 
-### getAccounts
-
-```javascript
-// TODO:
-```
-
 ### getBlock
 
 ```javascript
@@ -185,12 +179,6 @@ sdk.base.getBlockByHash('0x0c56def738d15d9dfaad64ad246e8b5fe39e175ce3da308ea1018
  * @return {Promise<number>} Promise returns current block number
  */
 sdk.base.getBlockNumber()
-```
-
-### getBlockTransactionCount
-
-```javascript
-// TODO:
 ```
 
 ### getTransactionCount
