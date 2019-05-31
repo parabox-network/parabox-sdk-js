@@ -40,8 +40,10 @@ yarn add git remote https://github.com/parabox-network/parabox-sdk-js.git
 
 # 创建 `sdk.js`
 
-​```javascript
-import ParaboxSDK from 'parabox-sdk'
+```javascript
+import ParaboxSDK from 'parabox-sdk' 
+// or 
+// const ParaboxSDK = require('parabox-sdk').default;
 const sdk = ParaboxSDK('http://localhost:1337')
 ```
 
