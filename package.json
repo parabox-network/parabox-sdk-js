@@ -1,6 +1,6 @@
 {
   "name": "parabox-sdk",
-  "version": "0.22.2",
+  "version": "0.24.1",
   "main": "lib/index.js",
   "repository": "https://github.com/parabox-network/parabox-sdk-js.git",
   "license": "MIT",
@@ -28,18 +28,18 @@
   "postinstall": "rm -f node_modules/web3/index.d.ts",
   "devDependencies": {
     "@types/web3": "1.0.12",
-    "babel-minify": "^0.4.3",
+    "babel-minify": "^0.5.0",
     "browserify": "^16.2.2",
     "cross-env": "^5.2.0",
-    "typedoc": "^0.11.1"
+    "typedoc": "^0.14.2"
   },
   "dependencies": {
-    "@cryptape/cita-signer": "^2.2.3",
+    "@cryptape/cita-signer": "^2.4.1",
     "web3": "1.0.0-beta.37"
   },
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/"
   },
-  "gitHead": "d023071be0cd9d70cf604c68e341aef7ccad5ea5"
+  "gitHead": "c779ddab45d74bfdd6a82f9af3bbd3b111fb704c"
 }

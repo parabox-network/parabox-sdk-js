@@ -2,6 +2,7 @@ import { EnhancedWeb3 } from './index'
 
 const actions = [
   'getTransactionReceipt',
+  'getTransactionReceiptEx',
   'getTransaction',
   'getTransactionProof',
   'getFilterChanges'
