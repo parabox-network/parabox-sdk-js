@@ -5,7 +5,6 @@ declare class Subscription extends EventEmitter {
     arguments: any;
     _reconnectIntervalId: any;
     options: any;
-    subscriptionMethod: any;
     constructor(options: any);
     _extractCallback: (...args: any[]) => any;
     _validateArgs: (...args: any[]) => void;

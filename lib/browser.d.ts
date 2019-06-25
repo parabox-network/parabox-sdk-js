@@ -1,6 +1,6 @@
-import CITASDK from './index';
+import SDK from './index';
 declare global {
     interface Window {
-        CITASDK: typeof CITASDK;
+        ParaboxSDK: typeof SDK;
     }
 }

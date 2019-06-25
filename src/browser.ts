@@ -1,10 +1,10 @@
-import CITASDK from './index'
+import SDK from './index'
 
 declare global {
   interface Window {
-    CITASDK: typeof CITASDK
+    ParaboxSDK: typeof SDK
   }
 }
 if (window) {
-  window.CITASDK = CITASDK
+  window.ParaboxSDK = SDK
 }
