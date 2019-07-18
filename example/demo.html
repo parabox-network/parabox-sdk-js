@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/bundle.js"></script>
+</head>
+
+<body>
+    <script>
+        async function sendTransaction() {
+            var sdk = ParaboxSDK("http://47.92.173.78:1337");
+            var blockNumber = await sdk.base.getBlockNumber()
+            var metaData = await sdk.base.getMetaData()
+
+            var transaction = {
+                to: "0xa7d8fb85e177482a54ae2a2da891b87577adc1e9",
+                privateKey: "0x50e02edee49a2e18dbe978b4d43121f7ef59b4bb91ced000e64b5f51655ef0fd",
+                nonce: 999999,
+                quota: 1000000,
+                chainId: metaData.chainIdV1,
+                version: metaData.version,
+                validUntilBlock: blockNumber + 99,
+                value: '0x1',
+            }
+            var res = await sdk.base.sendTransaction(transaction)
+            var receipt = await sdk.listeners.listenToTransactionReceipt(res.hash)
+            console.log(receipt)
+            document.getElementById("demo").innerHTML = JSON.stringify(receipt);
+        }
+    </script>
+    <p id="demo">这里将显示交易回执信息</p>
+    <button onclick="sendTransaction()">点击发送交易</button>
+</body>
+
+</html>
